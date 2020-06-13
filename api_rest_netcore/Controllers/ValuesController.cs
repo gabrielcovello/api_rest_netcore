@@ -12,9 +12,13 @@ namespace api_rest_netcore.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(
+               new object[] {
+                    new { dni = 12345678, nombre = "Gabriel", apellido = "Covello", curso = "Analista de sistemas", año = 2020 },
+                    new { dni = 87654432, nombre = "Diego", apellido = "Cavagni", curso = "Inglés", año = 2020 }
+           });
         }
 
         // GET api/values/5
